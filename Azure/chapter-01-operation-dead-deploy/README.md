@@ -1,4 +1,4 @@
-# Operation Dead Deploy
+# Azure Governance Forensics : Operation Dead Deploy
 
 ## Scenario
 An intern with temporary Contributor access deployed a "test environment" over a weekend, cut every corner, and left. You come in Monday as the on-call engineer with Reader access and have to reconstruct what happened and why governance did not stop it.
@@ -13,8 +13,8 @@ Services and Tools: Azure Portal, Azure Resource manager
 Access level: Reader access
 
 ## Investigation
-1. Starting with the resource list in the Azure tenant, I found a storage account that had been created in a resource group with a strange name. The resource group's name did not follow Microsoft's           recommended naming convention for resource groups in the tenant.
-   Resource group: redacted
+1. Starting with the resource list in the Azure tenant, I found a storage account that had been created in a resource group with a strange name. The resource group's name did not follow Microsoft's recommended naming convention for resource groups in the tenant.
+   Resource group name: redacted
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/resource-group.png)
 
