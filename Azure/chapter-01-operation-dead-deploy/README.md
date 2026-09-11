@@ -109,9 +109,11 @@ The intern was able to create a misnamed resource group and nested storage accou
 
 ## What I learned
     • Tags, timestamps, proper naming schemes are the audit trail for investigations.
-    • Policies are there to keep us from creating things with broken configurations that create administrative issues or security risks.
+    • Policies are there to keep us from creating things with broken configurations that create administrative issues 
+	  or security risks.
     • All Azure policies are defined using the JSON format.
-    • What I'd do differently – From the beginning, I would concentrate upon the evidence at hand instead of making assumptions that would send one down a rabbit hole of speculation. 
-	  I would have done much less clicking around the Tenant looking at various other groups and making comparisons with the offending resource group.
+    • What I'd do differently – From the beginning, I would concentrate upon the evidence at hand instead of making 
+	  assumptions that would send one down a rabbit hole of speculation. I would have done much less clicking around 
+	  the Tenant looking at various other groups and making comparisons with the offending resource group.
     • Policy management has a handy tool to export to .csv which is very helpful.
 
