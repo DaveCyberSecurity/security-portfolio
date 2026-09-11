@@ -20,7 +20,29 @@ Access level: Reader access
 
 2. I examined the storage group's associated tags and found the owner tag was set to: 
    intern-redacted
-   Also, an associated intern-flag tag was added by the intern as part of the normal creation process. 
+
+   In addition, an associated intern-flag tag was added by the intern as part of the normal creation process. 
+  ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/intern-flags.png)
+
+This indicated that the storage group had been created by an intern account. 
+
+3. Next, I examined the deployment associated with the misnamed Resource group. The deployment name had the word intern in the string.
+
+   This was further indication that its authorship was an intern account.
+	The Last modified date on the Deployment indicates when it was created.
+
+4. In an attempt to determine whether or not this was the only affected resource, I examined the list of resource groups. With just a precursory glance at the list, one could tell that the misnamed         resource group was the only one that had been created improperly from a naming perspective. Every other resource group conformed to proper naming convention.
+
+5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new        resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of 1 naming convention policy and also 9 security policies           associated with the Microsoft cloud security benchmark.
+
+
+6. To determine what the naming policy was actually doing, I examined the JSON definition of the naming convention policy.
+   It specified that if the name field did not start with the following   characters: "rg-” then a specified action would take place.
+   The choices available were to deny the effect, audit the effect or to disable the policy.
+   The naming convention policy effect parameter Default Value was set to audit.
+   This allowed the resource to be created incorrectly while being flagged as non-compliant.
+
+
 
 
 ## What broke / what surprised me
