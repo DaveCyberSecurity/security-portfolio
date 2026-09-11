@@ -64,14 +64,18 @@ This indicated that the storage group had been created by an intern account.
 7. The next step was to determine whether this was the same situation with the other policy violations for the storage account. I examined each sub-category of Microsoft cloud security benchmark and exported the policies to .csv to make the information more human-readable. A similar Audit effect parameter type was found on each of those policies as well. 
 
 Policy Group Title:
+
 NS-2 Secure cloud services with network controls - 6 policies in violation.
+
 All effect types are set to either Audit or AuditIfNotExists.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/6-policies.png)
 
 
 Policy Group Title:
+
 IM-1 Use centralized identity and authentication system - 3 policies in violation
+
 All effect types are set to Audit.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/3-policies.png)
