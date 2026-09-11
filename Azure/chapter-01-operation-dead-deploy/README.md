@@ -28,6 +28,8 @@ This indicated that the storage group had been created by an intern account.
 
 3. Next, I examined the deployment associated with the misnamed Resource group. The deployment name had the word intern in the string.
 
+
+
    This was further indication that its authorship was an intern account.
 	The Last modified date on the Deployment indicates when it was created.
 
@@ -48,7 +50,7 @@ Policy Group Title:
 NS-2 Secure cloud services with network controls - 6 policies in violation.
 All effect types are set to either Audit or AuditIfNotExists.
 
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/6-policies.png)
 
 
 
