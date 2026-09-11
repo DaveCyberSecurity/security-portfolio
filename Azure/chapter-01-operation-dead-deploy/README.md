@@ -19,10 +19,10 @@ Resource group: redacted
 
 
 ## What broke / what surprised me
-The most credible section in the document. Dead ends, wrong guesses, the thing that took an hour. Employers know real work is messy. This section separates you from certificate collectors.
+.
 
 ## Findings and recommendations
-What you determined, plus 2 or 3 recommendations as if you were reporting to the resource owner.
+
 
 ## What I learned
-3 to 5 bullets. At least one technical, one "what I'd do differently."
+
