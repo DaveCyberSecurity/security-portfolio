@@ -88,7 +88,7 @@ All effect types are set to Audit.
 8. As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
 
 
-![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/DefenderRecommendations.png)
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/Defender-Recommendations.png))
 
 
 
@@ -100,16 +100,18 @@ At the outset of the investigation, I noticed that the resource group and its co
 The intern was able to create a misnamed resource group and nested storage account that presented security risks. The otherwise properly configured policies were set to Audit instead of Deny at the detection of a violation. Properly configured policies should prevent the the creation of incorrectly configured resources which create administrative issues or security risks.
 
 
-1. Set the **Naming Convention **Policy effect value to Deny.
+1. Set the Naming Convention Policy effect value to Deny.
 2. Set the six offending NS-2 Secure cloud services with network controls policy effects to Deny.
 3.  Set the three offending IM-1 Use centralized identity and authentication system policy effects to Deny.
-4. If the resource group and its storage account are not serving any purpose and IT management has no objections from a change management perspective, then they should be deleted and recreated the proper way to bring them into compliance.
+4. If the resource group and its storage account are not serving any purpose and IT management has no objections from a change management perspective,
+   they should be deleted and recreated the proper way to bring them into compliance.
 
 
 ## What I learned
     • Tags, timestamps, proper naming schemes are the audit trail for investigations.
     • Policies are there to keep us from creating things with broken configurations that create administrative issues or security risks.
     • All Azure policies are defined using the JSON format.
-    • What I'd do differently – From the beginning, I would concentrate upon the evidence at hand instead of making assumptions that would send one down a rabbit hole of speculation. I would have done much less clicking around the Tenant looking at various other groups and making comparisons with the offending resource group.
+    • What I'd do differently – From the beginning, I would concentrate upon the evidence at hand instead of making assumptions that would send one down a rabbit hole of speculation. 
+	  I would have done much less clicking around the Tenant looking at various other groups and making comparisons with the offending resource group.
     • Policy management has a handy tool to export to .csv which is very helpful.
 
