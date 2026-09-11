@@ -100,9 +100,9 @@ At the outset of the investigation, I noticed that the resource group and its co
 The intern was able to create a misnamed resource group and nested storage account that presented security risks. The otherwise properly configured policies were set to Audit instead of Deny at the detection of a violation. Properly configured policies should prevent the the creation of incorrectly configured resources which create administrative issues or security risks.
 
 
-1. Set the Naming Convention Policy effect value to Deny.
-2. Set the six offending NS-2 Secure cloud services with network controls policy effects to Deny.
-3.  Set the three offending IM-1 Use centralized identity and authentication system policy effects to Deny.
+1. Set the 'Naming Convention Policy' effect value to Deny.
+2. Set the six offending 'NS-2 Secure cloud services with network controls' policy effects to Deny.
+3.  Set the three offending 'IM-1 Use centralized identity and authentication system' policy effects to Deny.
 4. If the resource group and its storage account are not serving any purpose and IT management has no objections from a change management perspective,
    they should be deleted and recreated the proper way to bring them into compliance.
 
