@@ -13,10 +13,14 @@ Services and Tools: Azure Portal, Azure Resource manager
 Access level: Reader access
 
 ## Investigation
-Starting with the resource list in the Azure tenant, I found a storage account that had been created in a resource group with a strange name. The resource group's name did not follow Microsoft's recommended naming convention for resource groups in the tenant.
-Resource group: redacted
+1. Starting with the resource list in the Azure tenant, I found a storage account that had been created in a resource group with a strange name. The resource group's name did not follow Microsoft's           recommended naming convention for resource groups in the tenant.
+   Resource group: redacted
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/resource-group.png)
+
+2. I examined the storage group's associated tags and found the owner tag was set to: 
+   intern-redacted
+   Also, an associated intern-flag tag was added by the intern as part of the normal creation process. 
 
 
 ## What broke / what surprised me
