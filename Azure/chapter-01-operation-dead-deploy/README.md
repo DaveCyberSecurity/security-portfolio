@@ -3,7 +3,7 @@
 ## Scenario
 An intern with temporary Contributor access deployed a "test environment" over a weekend, cut every corner, and left. You come in Monday as the on-call engineer with Reader access and have to reconstruct what happened and why governance did not stop it.
 
-In essence, a resource and associated resource group was discovered in the Azure Tenant that violated several compliance policies. The purpose of this investigation was to find out when the resources were deployed, by whom and how the resources were able to be created in violation of policy. It was also important to determine whether this was the only affected resource in the tenant.
+In essence, a resource and associated resource group was discovered in the Azure Tenant that violated several compliance policies. The purpose of this investigation was to find out when the resources were deployed, by whom and how the resources were able to be created in violation of policy. It was also important to determine whether this was the only affected resource in the tenant and whether any security risks were created in the process of the deployment.
 
 ## Environment
 Platform: Live multi-user Azure training tenant
@@ -36,10 +36,10 @@ This indicated that the storage group had been created by an intern account.
 
 
 
-4. In an attempt to determine whether or not this was the only affected resource, I examined the list of resource groups. With just a precursory glance at the list, one could tell that the misnamed         resource group was the only one that had been created improperly from a naming perspective. Every other resource group conformed to proper naming convention.
+4. In an attempt to determine whether or not this was the only affected resource, I examined the list of resource groups. With just a precursory glance at the list, one could tell that the misnamed resource group was the only one that had been created improperly from a naming perspective. Every other resource group conformed to proper naming convention.
 
 
-5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new        resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of 1 naming convention policy and also 9 security policies           associated with the Microsoft cloud security benchmark.
+5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of 1 naming convention policy and also 9 security policies associated with the Microsoft cloud security benchmark.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/policy-violations.png)
 
