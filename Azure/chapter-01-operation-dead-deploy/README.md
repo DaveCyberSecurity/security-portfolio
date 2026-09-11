@@ -74,13 +74,66 @@ All effect types are set to either Audit or AuditIfNotExists.
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/6-policies.png)
 
 
+Policy Group Title:
+IM-1 Use centralized identity and authentication system - 3 policies in violation
+All effect types are set to Audit.
+
+
+Digging further, the stated reason for non-compliance in almost all cases was that the creation of an incorrectly configured resource that had not been denied by an existing policy.
+
+Below is an example:
+Compliance state
+Non-compliant
+Last evaluated
+9/10/26, 1:21:12 PM MST
+Definition version
+1.0.0
+Initiative version
+57.59.0
+Reason for non-compliance
+Current value must contain the target value.
+Expression
+[resourcegroup().managedBy]
+Current value
+""
+Target value
+"/providers/Microsoft.Databricks/"
+Reason for non-compliance
+Current value must be equal to the target value.
+Field
+Microsoft.Storage/storageAccounts/networkAcls.defaultAction
+Path
+properties.networkAcls.defaultAction
+Current value
+"Allow"
+Target value
+"Deny"
+
+
+As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
+
+
+
+
 
 
 ## What broke / what surprised me
-.
+At the outset of the investigation, I noticed that the resource group and its contained resource had been created in a different Azure Region than the majority of the other resources in the tenant. This seemed to warrant a look to see if the policies were region specific. This was a red herring.
 
 ## Findings and recommendations
+The intern was able to create a misnamed resource group and nested storage account that presented security risks. The otherwise properly configured policies were set to Audit instead of Deny at the detection of a violation. Properly configured policies should prevent the the creation of incorrectly configured resources which create administrative issues or security risks.
+
+
+1. Set the **Naming Convention **Policy effect value to Deny.
+2. Set the six offending NS-2 Secure cloud services with network controls policy effects to Deny.
+3.  Set the three offending IM-1 Use centralized identity and authentication system policy effects to Deny.
+4. If the resource group and its storage account are not serving any purpose and IT management has no objections from a change management perspective, then they should be deleted and recreated the proper way to bring them into compliance.
 
 
 ## What I learned
+    • Tags, timestamps, proper naming schemes are the audit trail for investigations.
+    • Policies are there to keep us from creating things with broken configurations that create administrative issues or security risks.
+    • All Azure policies are defined using the JSON format.
+    • What I'd do differently – From the beginning, I would concentrate upon the evidence at hand instead of making assumptions that would send one down a rabbit hole of speculation. I would have done much less clicking around the Tenant looking at various other groups and making comparisons with the offending resource group.
+    • Policy management has a handy tool to export to .csv which is very helpful.
 
