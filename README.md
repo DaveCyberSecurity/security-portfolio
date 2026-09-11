@@ -1,11 +1,11 @@
-# Security Portfolio: [Your Name]
+# Security Portfolio: [Dave Haynie]
 
 Documented cloud security investigations, built in a live Azure tenant
 (Mad Hat Labs, a multi-user training environment).
 
 Target role: SOC Analyst / Security Analyst
-Currently: [your role] | [City / Remote]
-Contact: [email] · [LinkedIn URL]
+Currently: [Sys Admin] | [Phoenix, AZ]
+Contact: [dave@rockafeller.us] · [www.linkedin.com/in/davehaynie]
 
 ## Investigations
 | # | Title | Focus | Write-up |
