@@ -42,6 +42,14 @@ This indicated that the storage group had been created by an intern account.
    The naming convention policy effect parameter Default Value was set to audit.
    This allowed the resource to be created incorrectly while being flagged as non-compliant.
 
+7. The next step was to determine whether this was the same situation with the other policy violations for the storage account. I examined each sub-category of Microsoft cloud security benchmark and exported the policies to .csv to make the information more human-readable. A similar Audit effect parameter type was found on each of those policies as well. 
+
+Policy Group Title:
+NS-2 Secure cloud services with network controls - 6 policies in violation.
+All effect types are set to either Audit or AuditIfNotExists.
+
+
+
 
 
 
