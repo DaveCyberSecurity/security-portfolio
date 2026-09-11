@@ -39,7 +39,7 @@ This indicated that the storage group had been created by an intern account.
 4. In an attempt to determine whether or not this was the only affected resource, I examined the list of resource groups. With just a precursory glance at the list, one could tell that the misnamed resource group was the only one that had been created improperly from a naming perspective. Every other resource group conformed to proper naming convention.
 
 
-5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of 1 naming convention policy and also 9 security policies associated with the Microsoft cloud security benchmark.
+5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of one naming convention policy and also nine security policies associated with the Microsoft cloud security benchmark.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/policy-violations.png)
 
