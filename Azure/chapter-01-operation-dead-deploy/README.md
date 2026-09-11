@@ -78,6 +78,8 @@ Policy Group Title:
 IM-1 Use centralized identity and authentication system - 3 policies in violation
 All effect types are set to Audit.
 
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/3-policies.png)
+
 
 Digging further, the stated reason for non-compliance in almost all cases was that the creation of an incorrectly configured resource that had not been denied by an existing policy.
 
@@ -120,6 +122,10 @@ Current value
 
 Target value
 "Deny"
+
+
+
+
 
 
 As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
