@@ -84,35 +84,47 @@ Digging further, the stated reason for non-compliance in almost all cases was th
 Below is an example:
 Compliance state
 Non-compliant
+
 Last evaluated
 9/10/26, 1:21:12 PM MST
+
 Definition version
 1.0.0
+
 Initiative version
 57.59.0
+
 Reason for non-compliance
 Current value must contain the target value.
+
 Expression
 [resourcegroup().managedBy]
+
 Current value
 ""
-Target value
+T
+arget value
 "/providers/Microsoft.Databricks/"
+
 Reason for non-compliance
 Current value must be equal to the target value.
+
 Field
 Microsoft.Storage/storageAccounts/networkAcls.defaultAction
+
 Path
 properties.networkAcls.defaultAction
+
 Current value
 "Allow"
+
 Target value
 "Deny"
 
 
 As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
 
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/DefenderRecommendations.png)
 
 
 
