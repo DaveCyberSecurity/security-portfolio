@@ -61,10 +61,6 @@ This indicated that the storage group had been created by an intern account.
 
 
 
-
-
-
-
 7. The next step was to determine whether this was the same situation with the other policy violations for the storage account. I examined each sub-category of Microsoft cloud security benchmark and exported the policies to .csv to make the information more human-readable. A similar Audit effect parameter type was found on each of those policies as well. 
 
 Policy Group Title:
@@ -81,7 +77,7 @@ All effect types are set to Audit.
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/3-policies.png)
 
 
-Digging further, the stated reason for non-compliance in almost all cases was that the creation of an incorrectly configured resource that had not been denied by an existing policy.
+8. Digging further, the stated reason for non-compliance in almost all cases was that the creation of an incorrectly configured resource that had not been denied by an existing policy.
 
 Below is an example:
 Compliance state
@@ -128,7 +124,7 @@ Target value
 
 
 
-As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
+9. As a result, Defender for Cloud detected vulnerabilities with the storage account and made recommendations for changes.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/DefenderRecommendations.png)
 
