@@ -37,6 +37,8 @@ This indicated that the storage group had been created by an intern account.
 
 5. Policies are ostensibly in place in the environment to prevent the creation of resource groups that do not conform to proper naming standards. Why was this not caught by policy? I went to the new        resource group and examined the policies associated with it. I found the resource group and its contained resource to be in violation of 1 naming convention policy and also 9 security policies           associated with the Microsoft cloud security benchmark.
 
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/policy-violations.png)
+
 
 6. To determine what the naming policy was actually doing, I examined the JSON definition of the naming convention policy.
    It specified that if the name field did not start with the following   characters: "rg-” then a specified action would take place.
