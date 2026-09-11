@@ -16,8 +16,7 @@ Access level: Reader access
 Starting with the resource list in the Azure tenant, I found a storage account that had been created in a resource group with a strange name. The resource group's name did not follow Microsoft's recommended naming convention for resource groups in the tenant.
 Resource group: redacted
 
-[https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/resource-group.png]
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/resource-group.png)
 
 
 ## What broke / what surprised me
