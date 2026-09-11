@@ -4,7 +4,9 @@ Documented cloud security investigations, built in a live Azure tenant
 (Mad Hat Labs, a multi-user training environment).
 
 Target role: SOC Analyst / Security Analyst
-Currently: [Sys Admin] | [Phoenix, AZ]
+
+Currently: Sys Admin | Phoenix, AZ
+
 Contact: [dave@rockafeller.us] · [www.linkedin.com/in/davehaynie]
 
 ## Investigations
