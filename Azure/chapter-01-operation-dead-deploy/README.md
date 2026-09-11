@@ -44,6 +44,8 @@ This indicated that the storage group had been created by an intern account.
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/policy-violations.png)
 
 
+
+
 6. To determine what the naming policy was actually doing, I examined the JSON definition of the naming convention policy.
    It specified that if the name field did not start with the following   characters: "rg-” then a specified action would take place.
    The choices available were to deny the effect, audit the effect or to disable the policy.
@@ -51,11 +53,15 @@ This indicated that the storage group had been created by an intern account.
    This allowed the resource to be created incorrectly while being flagged as non-compliant.
 
 
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/rg-field.png)
 
 
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter-01-operation-dead-deploy/images/effect-value.png)
+
+
+
+
 
 
 
