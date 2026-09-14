@@ -7,7 +7,7 @@ Target role: SOC Analyst / Security Analyst
 
 Currently: Sys Admin | Phoenix, AZ
 
-Contact: [dave@rockafeller.us] · [www.linkedin.com/in/davehaynie]
+Contact: [Dave.Haynie@proton.me] · [www.linkedin.com/in/davehaynie]
 
 ## Investigations
 | # | Title | Focus | Write-up |
