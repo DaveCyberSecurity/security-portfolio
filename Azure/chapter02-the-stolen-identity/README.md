@@ -1,5 +1,5 @@
-# The Stolen Identity: 
-# An OAuth consent-phishing kill chain investigation
+## The Stolen Identity: 
+## An OAuth consent-phishing kill chain investigation
 
 
 ## Scenario
@@ -14,11 +14,6 @@ Services and Tools: Azure Portal, Azure Resource manager
 Access level: Reader access
 
 
-
-
-
 ## Investigation
 
-
-
-Objective 1: Entry
+## Objective 1: Entry
