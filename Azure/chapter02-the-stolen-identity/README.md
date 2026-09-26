@@ -16,16 +16,21 @@ Access level: Reader access
 
 ## Investigation
 
-## Objective 1: Entry
+## Objective 1: ENTRY
 
 
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/1-LegacyApp.png)
 
 
-## Objective 2: Escalate
+## Objective 2: ESCALATE
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/2-Secrets.png)
 
 
-stuff
+## Objective 3: PIVOT
+
+
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-API-Permissions.png)
+
+
