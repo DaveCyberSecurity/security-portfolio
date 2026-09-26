@@ -1,4 +1,4 @@
-# Azure Forensics Investigation: Operation Dead Deploy
+# Operation Dead Deploy: An Azure Forensics Investigation
 
 ## Scenario
 An intern with temporary Contributor access deployed a "test environment" over a weekend, cut every corner, and left. You come in Monday as the on-call engineer with Reader access and have to reconstruct what happened and why governance did not stop it.
