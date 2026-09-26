@@ -24,7 +24,8 @@ Access level: Reader access
 ## Investigation
 
 ## Objective 1: ENTRY
-
+The attacker gained entry by the method of OAuth consent-phishing the user detailed above. The user completed MFA, clicked Accept to the consent screen and their access token was captured.
+The attacker then begin to look for resources to exploit and establish persistence. The attacker found what they were looking for in a Legacy Enterprise application which the user had ownership access to. The incident team responded and 
 
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/1-LegacyApp.png)
