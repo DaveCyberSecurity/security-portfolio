@@ -1,4 +1,5 @@
-## The Stolen Identity: An OAuth consent-phishing kill chain investigation
+# The Stolen Identity: #
+## An OAuth consent-phishing App registration kill chain investigation
 
 
 
