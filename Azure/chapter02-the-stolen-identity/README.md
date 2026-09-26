@@ -1,2 +1,3 @@
-OAuth consent-phishing kill chain investigation:
-The Stolen Identity
+# The Stolen Identity: 
+# An OAuth consent-phishing kill chain investigation
+
