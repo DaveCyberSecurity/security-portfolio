@@ -36,7 +36,7 @@ First , we look at the Legacy app under App Registrations. In the Branding and P
 ## 
 ## Objective 2: ESCALATE
 
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/2-Secrets-2.png)
 
 ##
 ## Objective 3: PIVOT
