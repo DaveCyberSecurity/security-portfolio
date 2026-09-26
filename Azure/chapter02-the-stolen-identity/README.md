@@ -10,7 +10,7 @@ In this exercise, I reconstructed a five-stage OAuth consent-phishing kill chain
 
 In an OAuth consent phishing scenario, the attacker registers a malicious OAuth application on their infrastructure (in Microsoft Entra ID, Google workspace or some other platform) and sends the user/victim a phishing email. The email contains a link to the seemingly legitimate application and asks the user to authorize the app. If the user clicks on the malicious link, instead of being taken to a suspicious looking domain, they are taken to a legitimate Microsoft or google sign-in page.  The user is presented with a consent screen that requests access. If the user clicks Accept, an access token is created and passed on to the attacker’s infrastructure. This token can then be used to access the tenant with the same level of access that the phished user possesses. The attacker has gained ongoing API-level access without the user noticing and can make API calls on the user's behalf. This kind of attack does not steal credentials or use fake sign-in pages. It never has to defeat MFA because it has piggy-backed a user's access though a trusted identity provider like Microsoft or Google's authorization flow.
 
-Once the attacker is in, they will seek to use the access they have gained to issue API calls to find what resources they can exploit. The name of the game at this point is to establish persistence.
+Once the attacker is in, they will seek to use the access they have gained to issue API calls to find what resources they can exploit. The name of the game at this point is to establish persistence. IN the following scenario, the attacker got through with by OAuth consent-phishing. Our job is to recreate what happened next.
 
 
 ## Environment
