@@ -24,6 +24,8 @@ Access level: Reader access
 
 
 ## Objective 2: Escalate
-##
+
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/2-Secrets.png)
+
 
 stuff
