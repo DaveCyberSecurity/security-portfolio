@@ -30,7 +30,7 @@ The attacker then began to look for resources to exploit and establish persisten
 
 First , we look at the Legacy app under App Registrations. In the Branding and Properties blade, 
 
-![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/1-LegacyApp.png
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/1-LegacyApp.png)
 
 
 ## 
