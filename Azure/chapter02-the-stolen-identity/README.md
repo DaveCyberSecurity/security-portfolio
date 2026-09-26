@@ -41,7 +41,11 @@ Access level: Reader access
 ##
 ## Objective 4. PERSIST
 
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/4-ExposeAnAPI.png)
 
 
+
+##
+## Objective 5. LOOT
 
 
