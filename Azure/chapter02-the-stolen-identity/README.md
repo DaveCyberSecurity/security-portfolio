@@ -26,6 +26,8 @@ Access level: Reader access
 ## Objective 1: ENTRY
 The attacker gained entry by the method of OAuth consent-phishing detailed above. The user completed MFA, clicked Accept to the consent screen and their access token was captured.
 The attacker then began to look for resources to exploit and establish persistence. The attacker found what they were looking for in a Legacy Enterprise connection application which the user had ownership access to. The incident team responded and identified the phished user as Carl from accounting. Carl had been left as an owner of the Legacy application by mistake and had never been removed. 
+
+
 First , we look at the Legacy app under App Registrations. In the Branding and Properties blade, 
 
 
