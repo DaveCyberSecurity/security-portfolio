@@ -12,3 +12,11 @@ Platform: Live multi-user Azure training tenant
 Services and Tools: Azure Portal, Azure Resource manager
 
 Access level: Reader access
+
+
+
+
+
+##Investigation
+
+Objective 1: Entry
