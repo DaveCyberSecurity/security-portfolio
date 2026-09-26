@@ -8,6 +8,8 @@ Sometime in the last 24 hours, someone got access into the Mad Hat Labs tenant. 
 
 In this exercise, we reconstructed a five-stage OAuth consent-phishing kill chain in a live Azure tenant through forensic analysis of two linked app registrations.
 
+
+
 ## Environment
 Platform: Live multi-user Azure training tenant
 
