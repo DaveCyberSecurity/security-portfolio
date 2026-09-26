@@ -36,3 +36,12 @@ Access level: Reader access
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
 
+
+
+
+## Objective 4. PERSIST
+
+
+
+
+
