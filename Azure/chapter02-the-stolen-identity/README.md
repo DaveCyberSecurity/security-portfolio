@@ -48,4 +48,4 @@ Access level: Reader access
 ##
 ## Objective 5. LOOT
 
-
+![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/5-RedirectURI.png)
