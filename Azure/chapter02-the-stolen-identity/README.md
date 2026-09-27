@@ -49,7 +49,7 @@ To further enable persistent access, the expiry date of the Client Secret is set
 
 By using the new Client secret, the attacker can now perform API calls using the permissions of the application. 
 
-Looking at the API permissions blade of the Legacy application, we see that it has the Directory.Read.All or the User.Read.All permissions. Entra ID user accounts, including administrator accounts, do not have the Directory.Read.All or the User.Read.All permissions. These are Microsoft Graph permissions that are granted to applications/service principles. The user will only have them indirectly through applications using delegated permissions. Carl was a normal user, so gaining access to the Legacy app was a definite escalation of permissions for the attacker and took Carl completely out of the loop.
+Looking at the API permissions blade of the Legacy application, we see that it has the Directory.Read.All and the User.Read.All permissions. Entra ID user accounts, including administrator accounts, DO NOT have the Directory.Read.All or the User.Read.All permissions. These are Microsoft Graph permissions that are granted to applications/service principles. The user will only have them indirectly through applications using delegated permissions. Carl was a normal user, so gaining access to the Legacy app was a definite escalation of permissions for the attacker and took Carl completely out of the loop.
 
 One thing to note: 
 
