@@ -65,7 +65,7 @@ As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' t
 What if that Client secret from Objective 2 on the Legacy App were to be deleted? The attacker's access would go away. 
 
 Looking at the Owner blade for the Legacy App, a new rogue entry has appeared. It is a new Service Principle of a new App registration created by the attacker.
-Carl's permissions allow him to register new applications add owners to the Legacy app. The attacker used Carl's permissions to do just that.
+Carl's permissions allow him to register new applications and add owners to the Legacy app. The attacker used Carl's permissions to do just that.
 They created a new Service principle and made it an owner of the the Legacy app. 
 
 Now, if the secret is rotated, the attacker can re-credential by navigating to App Registrations -> Legacy App -> Certificates and secrets, add a new client secret, record the secret value.
