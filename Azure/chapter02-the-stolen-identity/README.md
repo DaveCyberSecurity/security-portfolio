@@ -38,7 +38,7 @@ First , we look at the Legacy app under App Registrations. In the Branding and P
 
 Since Carl was the owner of the App, the attacker could use Carl's token permissions to make changes to the app to establish a backdoor.
 
-Next, the Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. As can be seen from the following screenshot, a client secret can also be referred to as an application password. The client secret can be used to log in as the application and request a new access token. In doing so, the attacker no longer needs Carl's token to get in. The attacker can use the Client ID, Tenant ID and the new Client Secret to authenticate as the application. 
+The Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. As can be seen from the following screenshot, a client secret can also be referred to as an application password. The client secret can be used to log in as the application and request a new access token. In doing so, the attacker no longer needs Carl's token to get in. The attacker can use the Client ID, Tenant ID and the new Client Secret to authenticate as the application. 
 
 To further enable persistent access, the expiry date of the Client Secret is set to 12/31/2099. Plenty of time to be up to lots of naughtiness.
 
@@ -66,7 +66,11 @@ What if that Client secret from Objective 2 on the Legacy App were to be deleted
 
 Looking at the Owner blade for the Legacy App, a new rogue entry has appeared. It is a new Service Principle of a new App registration created by the attacker.
 Carl's permissions allow him to register new applications add owners to the Legacy app. The attacker used Carl's permissions to do just that.
-They created a new Service principle and made it an owner of the the Legacy app. Now the attacker can use the new owner to....
+They created a new Service principle and made it an owner of the the Legacy app. 
+
+Now, if the secret is rotated, the attacker can re-credential by navigating to App Registrations -> Legacy App -> Certificates and secrets, add a new client secret, record the secret value.
+The attacker can then use the new credential to obtain another OAuth token as the legacy application.
+
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
 
