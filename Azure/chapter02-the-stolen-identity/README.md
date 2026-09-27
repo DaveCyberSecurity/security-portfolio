@@ -56,7 +56,7 @@ One thing to note:
 When a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The Directory.Read.All or the User.Read.All permissions have to be explicitly requested and consented to administratively.
 
 As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' the legacy app was granted those permissions at some point in the past.
-
+#
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-API-Permissions.png)
 
@@ -70,7 +70,7 @@ They created a new Service principle and made it an owner of the the Legacy app.
 
 Now, if the secret is rotated, the attacker can re-credential by navigating to App Registrations -> Legacy App -> Certificates and secrets, add a new client secret, record the secret value.
 The attacker can then use the new credential to obtain another OAuth token as the legacy application. Its back to the naughtiness again.
-
+#
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
 
