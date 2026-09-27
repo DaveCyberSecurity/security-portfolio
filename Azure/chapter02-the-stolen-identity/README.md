@@ -84,8 +84,10 @@ The attacker used Carl's access to create the scope on the legacy app.
 A custom scope tells Entra ID that the Legacy application can act as a secured back end resource that other applications can call.
 
 The attacker wants multiple independent paths of regaining access to the legacy app.
-Being able to create a new secret from Objective 3 is one path. Publishing a custom API scope to the API blade is another.
+Being able to create a new secret repeatedly from Objective 3 is one path. 
 The secret method allows the attacker to make API calls with the Legacy App's permissions.
+
+Publishing a custom API scope to the API blade is another.
 The custom API scope method allows the attacker to call upon the Legacy App itself to make the API calls.
 The goal is to create a second access path that will survive credential cleanup.
 
