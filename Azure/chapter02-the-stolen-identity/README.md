@@ -69,7 +69,7 @@ Carl's permissions allow him to register new applications add owners to the Lega
 They created a new Service principle and made it an owner of the the Legacy app. 
 
 Now, if the secret is rotated, the attacker can re-credential by navigating to App Registrations -> Legacy App -> Certificates and secrets, add a new client secret, record the secret value.
-The attacker can then use the new credential to obtain another OAuth token as the legacy application.
+The attacker can then use the new credential to obtain another OAuth token as the legacy application. Its back to the naughtiness again.
 
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
