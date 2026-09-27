@@ -69,7 +69,7 @@ Carl's permissions allow him to register new applications add owners to the Lega
 They created a new Service principle and made it an owner of the the Legacy app. 
 
 Now, if the secret is rotated, the attacker can re-credential by navigating to App Registrations -> Legacy App -> Certificates and secrets, add a new client secret, record the secret value.
-The attacker can then use the new credential to obtain another OAuth token as the legacy application. Its back to the naughtiness again.
+The attacker can then use the new credential to obtain another OAuth token as the legacy application. This owner app acts as a shadow admin.
 #
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
@@ -103,5 +103,12 @@ The attacker's app is then pointed at that link.
 
 ##
 ## Objective 5. LOOT
+From the attacker's perspective, it gets even better. 
+
+On the Authentication blade of the attacker's new service principle, two new redirect URIs appeared.
+The top URI points to the attacker's infrastructure.
+The other is a combination of the rogue app client id, the redirect URI and the Expose the API string from Objective 4.
+This can be used to launch an entirely new OAuth consent phishing campaign against the tenant users.
+
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/5-RedirectURI.png)
