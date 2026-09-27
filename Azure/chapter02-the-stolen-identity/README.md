@@ -62,10 +62,11 @@ As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' t
 
 #
 
-What if that Client secret on the Legacy App were to be deleted? The attacker's access would go away. 
+What if that Client secret from Objective 2 on the Legacy App were to be deleted? The attacker's access would go away. 
 
-Looking at the Owner blade for the Legacy App, a new entry has appeared. It is a new Service Principle of a new App registration created by the attacker.
-Carl's permissions allow him to add owners to the Legacy app. 
+Looking at the Owner blade for the Legacy App, a new rogue entry has appeared. It is a new Service Principle of a new App registration created by the attacker.
+Carl's permissions allow him to register new applications add owners to the Legacy app. The attacker used Carl's permissions to do just that.
+They created a new Service principle and made it an owner of the the Legacy app. Now the attacker can use the new owner to....
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-OwnerList.png)
 
@@ -73,6 +74,9 @@ Carl's permissions allow him to add owners to the Legacy app.
 
 ##
 ## Objective 4. PERSIST
+
+Expose an API blade of the Legacy application.
+
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/4-ExposeAnAPI.png)
 
