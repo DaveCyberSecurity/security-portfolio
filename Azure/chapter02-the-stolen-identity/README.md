@@ -60,7 +60,7 @@ As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' t
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-API-Permissions.png)
 
-
+#
 
 What if that Client secret on the Legacy App were to be deleted? The attacker's access would go away. 
 
