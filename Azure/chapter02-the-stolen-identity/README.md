@@ -115,7 +115,6 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 
 #
 ## Attack Chain Summary
- 
 | Stage | Objective | Action |
 |---------|---------|---------|
 | 1 | Entry | OAuth consent phishing captured Carl's access token |
