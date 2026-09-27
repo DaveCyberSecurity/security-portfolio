@@ -38,7 +38,7 @@ First , we look at the Legacy app under App Registrations. In the Branding and P
 
 Since Carl was the owner of the App, the attacker could use Carl's token permissions to make changes to the app to establish a backdoor.
 
-Next, Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. As can be seen from the following screenshot, a client secret can also be referred to as an application password. The client secret can be used to log in as the application and request a new access token. In doing so, the attacker no longer needed Carl's token to get in. The attacker can use the Client ID, Tenant ID and the new Client Secret to authenticate as the application. 
+Next, the Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. As can be seen from the following screenshot, a client secret can also be referred to as an application password. The client secret can be used to log in as the application and request a new access token. In doing so, the attacker no longer needs Carl's token to get in. The attacker can use the Client ID, Tenant ID and the new Client Secret to authenticate as the application. 
 
 To further enable persistent access, the expiry date of the Client Secret is set to 12/31/2099. Plenty of time to be up to lots of naughtiness.
 
@@ -47,6 +47,9 @@ To further enable persistent access, the expiry date of the Client Secret is set
 ##
 ## Objective 3: PIVOT
 
+By using the new Client secret, the attacker can now perform API calls using the permissions of the application. 
+
+Looking at the API permissions of the Legacy application, we see that it has the Directory.Read.All or the User.Read.All permissions. Entra ID user accounts, including administrator accounts, do not have the Directory.Read.All or the User.Read.All permissions. These are Microsoft Graph permissions that are granted to applications/service principles. The user will only have them indirectly through applications using delegated permissions. Carl was a normal user, so gaining access to the Legacy app was a definite escalation of permissions for the attacker and took Carl completely out of the loop.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-API-Permissions.png)
 
