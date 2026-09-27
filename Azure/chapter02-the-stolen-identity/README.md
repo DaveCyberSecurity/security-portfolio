@@ -91,7 +91,7 @@ Publishing a custom API scope to the API blade is another.
 The custom API scope method allows the attacker to call upon the Legacy App itself to make the API calls.
 The goal is to create a second access path that will survive credential cleanup.
 
-The General format looks some thing like this:
+The general format for an API custom scope looks something like this:
 api://legacy-app/access_as_user
 
 The attacker's app is then pointed at that link.
