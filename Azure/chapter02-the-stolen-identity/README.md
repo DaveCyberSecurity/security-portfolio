@@ -91,6 +91,7 @@ The goal is to create a second access path that will survive credential cleanup.
 
 The General format looks some thing like this:
 api://legacy-app/access_as_user
+
 The attacker's app is then pointed at that link
 
 
