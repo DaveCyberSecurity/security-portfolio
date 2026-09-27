@@ -79,7 +79,24 @@ The attacker can then use the new credential to obtain another OAuth token as th
 ##
 ## Objective 4. PERSIST
 
-Expose an API blade of the Legacy application.
+Looking at the Expose an API blade of the Legacy application.
+
+
+
+The attacker wants multiple independent paths of regaining access to the legacy app.
+Being able to create a new secret is one path. Publishing a custom API scope is another.
+The secret method allows the attacker to make API calls with the Legacy App's permissions.
+The custom API scope method allows the attacker to call upon the Legacy App itself to make the API calls.
+The goal is to create a second access path that will survive credential cleanup.
+
+The attacker used Carl's access to create the scope on the legacy app.
+
+The General format looks some thing like this:
+api://legacy-app/access_as_user
+
+The attacker's app is then pointed at that link
+
+tells Entra ID (Azure AD) that your application can act as a secured backend resource that other applications can call
 
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/4-ExposeAnAPI.png)
