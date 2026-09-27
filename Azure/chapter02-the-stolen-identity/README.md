@@ -37,8 +37,8 @@ First , we look at the Legacy app under App Registrations. In the Branding and P
 ## Objective 2: ESCALATE
 
 Since Carl was the owner of the App, the attacker could use Carl's token permissions to make changes to the app to establish a backdoor.
-The Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. The client secret can be used to log in as the application and request
-a new access token. In doing so, the attacker no longer needed Carl's token to get in.
+
+Next, Certificates and Secrets blade on the Legacy app shows that the attacker created a new Client secret. As can be seen from the following screenshot, a client secret can also be referred to as an application password. The client secret can be used to log in as the application and request a new access token. In doing so, the attacker no longer needed Carl's token to get in.
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/2-Secrets-2.png)
 
