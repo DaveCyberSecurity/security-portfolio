@@ -114,12 +114,15 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/5-RedirectURI.png)
 
 #
-Attack Chain Summary
-Stage	Objective	Action1	Entry	OAuth consent phishing captures Carl's access token
-2	Escalate	New client secret added to Legacy Application
-3	Pivot	Legacy Application permissions leveraged; rogue owner service principal created
-4	Persist	Custom API scope published for alternate access path
-5	Loot	Rogue application configured with attacker-controlled redirect URIs to support future phishing operations
+## Attack Chain Summary
+ 
+| Stage | Objective | Action |
+|---------|---------|---------|
+| 1 | Entry | OAuth consent phishing captures Carl's access token |
+| 2 | Escalate | New client secret added to Legacy Application |
+| 3 | Pivot | Rogue service principal added as owner |
+| 4 | Persist | Custom API scope published |
+| 5 | Loot | Redirect URIs configured for future phishing |
 
 #
 What broke / what surprised me
