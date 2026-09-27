@@ -51,6 +51,13 @@ By using the new Client secret, the attacker can now perform API calls using the
 
 Looking at the API permissions blade of the Legacy application, we see that it has the Directory.Read.All or the User.Read.All permissions. Entra ID user accounts, including administrator accounts, do not have the Directory.Read.All or the User.Read.All permissions. These are Microsoft Graph permissions that are granted to applications/service principles. The user will only have them indirectly through applications using delegated permissions. Carl was a normal user, so gaining access to the Legacy app was a definite escalation of permissions for the attacker and took Carl completely out of the loop.
 
+One thing to note: 
+
+When a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The Directory.Read.All or the User.Read.All permissions have to be explicitly requested and consented to administratively.
+
+As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' the legacy app was granted those permissions at some point in the past.
+
+
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/3-API-Permissions.png)
 
 
