@@ -57,7 +57,7 @@ Looking at the API permissions blade of the Legacy application, we see that it h
 
 One thing to note: 
 
-When a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The Directory.Read.All or the User.Read.All permissions have to be explicitly requested and consented to administratively.
+When a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The **Directory.Read.All** or the **User.Read.All** permissions have to be explicitly requested and consented to administratively.
 
 As you can see from the circled portion 'Grant Admin Consent for Mad Hat Labs' the legacy app was granted those permissions at some point in the past.
 #
@@ -130,8 +130,8 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 
 ---
 
-## What broke / what surprised me:
-I was genuinely surprised that Microsoft Entra ID allows all member users to register applications by default. This behavior dates back to Azure AD's original goal of enabling self-service development and SaaS integration without requiring administrators for every application registration.
+## What surprised me:
+I was genuinely surprised (and somewhat horrified at first) that Microsoft Entra ID allows all member users to register applications by default. This behavior dates back to Azure AD's original goal of enabling self-service development and SaaS integration without requiring administrators for every application registration.
 
 When a standard user registers an app, the user:
 - Becomes an owner of the application they create.
@@ -140,7 +140,7 @@ When a standard user registers an app, the user:
 - Still requires administrator approval for permissions that require admin consent.
 
 The good news:
-As mentioned in Objective 3, when a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The Directory.Read.All or the User.Read.All permissions have to be explicitly requested and consented to administratively. This can be caught by monitoring and alerting when an Administrative consent event takes place.
+As mentioned in Objective 3, when a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The **Directory.Read.All** or the **User.Read.All** permissions have to be explicitly requested and consented to administratively. This can be caught by monitoring and alerting when an Administrative consent event takes place.
 
 
 ---
