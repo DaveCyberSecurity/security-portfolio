@@ -1,4 +1,5 @@
 # The Stolen Identity: #
+
 ## An OAuth consent-phishing App registration kill chain investigation ###
 
 ---
@@ -115,7 +116,8 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/5-RedirectURI.png)
 
-#
+---
+
 ## Attack Chain Summary
 | Stage | Objective | Action |
 |---------|---------|---------|
@@ -125,7 +127,8 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 | 4 | Persist | Custom API scope published |
 | 5 | Loot | Redirect URIs configured for future phishing |
 
-#
+---
+
 # What broke / what surprised me
 At the outset of the investigation, I made the erroneous assumption that Phishing-Resistant MFA could have prevented the OAuth consent phishing scenario. 
 Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. 
@@ -140,7 +143,7 @@ The reason is simple:
 In a consent phishing attack, the attacker does not need the user's password, session cookie, or MFA code. Instead, they convince the user to authorize a malicious application that requests access to organizational resources.
 
 
-#
+---
 
 # Findings and recommendations
 
@@ -353,21 +356,9 @@ Alerts should be integrated into SOC monitoring workflows and investigated promp
 
 ---
 
- 
-
-
-#
 ## What I learned
 
-Phishing-resistant MFA significantly reduces credential theft and adversary-in-the-middle phishing, but it does not by itself stop OAuth consent phishing.
-Phishing-resistant MFA (such as FIDO2 security keys, Windows Hello for Business, or passkeys) protects the authentication step. OAuth consent phishing abuses the authorization step. 
-In a consent phishing attack:
-    1. The victim is directed to a legitimate Microsoft or Google sign-in page. 
-    2. The user successfully authenticates using their phishing-resistant MFA. 
-    3. The user is shown an OAuth consent screen. 
-    4. The user clicks Accept and grants permissions to a malicious application. 
-    5. The attacker receives OAuth tokens or delegated permissions without ever stealing credentials.
-Because the user authenticated legitimately, MFA worked exactly as designed. The attacker never needed to bypass it.
+
 
 
 
