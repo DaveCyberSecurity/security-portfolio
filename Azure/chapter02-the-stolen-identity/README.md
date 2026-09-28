@@ -129,6 +129,13 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 | 5 | Loot | Redirect URIs configured for future phishing |
 
 ---
+## Confused Deputy Attack
+
+
+
+
+
+---
 
 ## What surprised me:
 I was genuinely surprised (and somewhat horrified at first) that Microsoft Entra ID allows all member users to register applications by default. This behavior dates back to Azure AD's original goal of enabling self-service development and SaaS integration without requiring administrators for every application registration.
