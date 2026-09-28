@@ -131,7 +131,9 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 ---
 ## Confused Deputy Attack
 
+This situation is an example of a Confused Deputy Attack. A confused deputy attack is a security vulnerability where a less-privileged user or application tricks a more-privileged program (the "deputy") into performing an action on its behalf that the attacker could not perform directly.
 
+The "deputy" was the Legacy application. The attacker, by conducting an OAuth Consent phishing against Carl, was able to trick the "deputy" application into using its privileged roles on the attacker's behalf. Because Carl was the owner of the App, the attacker could use Carl's token permissions to make changes to the app to establish a backdoor and take full advantage of its **Directory.Read.All** or the **User.Read.All** permissions. The "deputy" thought that it was Carl telling it to issue these API calls in Microsoft Graph when, in reality, it was the attacker.
 
 
 
