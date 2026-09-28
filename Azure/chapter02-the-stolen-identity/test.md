@@ -8,6 +8,8 @@ The reason is simple:
 
 - **Phishing-resistant MFA protects authentication.**
 - **OAuth consent phishing abuses authorization.**
+-
+-
 
 In a consent phishing attack, the attacker does not need the user's password, session cookie, or MFA code. Instead, they convince the user to authorize a malicious application that requests access to organizational resources.
 
@@ -81,3 +83,18 @@ Organizations should combine phishing-resistant MFA with:
 - Regular audits of app registrations and service principals
 
 Together, these controls help defend against OAuth consent phishing and application-based persistence techniques.
+
+
+
+
+---
+
+-
+-
+-
+### title
+
+> statement with a vertical line at the left for as long as you continue typing blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+
+
