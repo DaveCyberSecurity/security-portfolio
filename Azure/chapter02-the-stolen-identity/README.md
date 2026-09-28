@@ -147,7 +147,7 @@ As mentioned in Objective 3, when a standard user is allowed to register new app
 
 ## Findings and recommendations:
 
-The following remediation actions are recommended based on evidence of OAuth consent phishing, application ownership abuse, persistence through application credentials, and malicious app-to-app trust relationships.
+The following remediation actions are recommended based on evidence of OAuth consent phishing, application ownership abuse, persistence through application credentials, and malicious app-to-app trust relationships. They are presented in an incident-response report style format.
 
 ---
 
