@@ -1,9 +1,9 @@
-# The Stolen Identity: 
-**An OAuth consent-phishing App registration kill chain investigation**
+<h1 align="center">The Stolen Identity:</h1> 
+<h2 align="center">An OAuth consent-phishing App registration kill chain investigation</h2>
 
 ---
 
-## Scenario
+# Scenario
 Sometime in the last 24 hours, someone got access into the Mad Hat Labs tenant. Oh naurrrrr....They didn't kick down any doors using any zero-day exploits on anything. They walked right in through the identity plane, and man were they were quiet about it. No alarms were tripped. The Mad Hat Labs security team were NOT notified of any MALFEASANCE. The logs just show a series of perfectly normal sign-ins.
 
 In this exercise, I reconstructed a five-stage OAuth consent-phishing kill chain in a live Azure tenant through forensic analysis of two linked app registrations.
