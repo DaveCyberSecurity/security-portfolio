@@ -126,12 +126,15 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 #
 ## What broke / what surprised me
 At the outset of the investigation, I made the erroneous assumption that Phishing-Resistant MFA could have prevented the OAuth consent phishing scenario. 
-Why Phishing-Resistant MFA Does Not Stop OAuth Consent Phishing. Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. However, **it does not, by itself, prevent OAuth consent phishing**.
+Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. 
+However, **it does not, by itself, prevent OAuth consent phishing**.
+
 The reason is simple:
  
-- **Phishing-resistant MFA protects authentication.**
+- **Phishing-resistant MFA (such as FIDO2 security keys, Windows Hello for Business, or passkeys) protects authentication.**
 - **OAuth consent phishing abuses authorization.**
- 
+
+
 In a consent phishing attack, the attacker does not need the user's password, session cookie, or MFA code. Instead, they convince the user to authorize a malicious application that requests access to organizational resources.
 
 
