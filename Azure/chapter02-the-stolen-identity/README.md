@@ -231,7 +231,7 @@ Validate that:
 - No active consent relationships exist.
 - Access tokens can no longer be issued through the previously authorized application.
 
-> **Important:** Containment actions such as deleting secrets, owners, or scopes do **not** automatically remove existing OAuth consent grants.
+**Important:** Containment actions such as deleting secrets, owners, or scopes do **not** automatically remove existing OAuth consent grants.
 
 **Priority:** Critical  
 **Owner:** IAM / Security Operations Center (SOC)
