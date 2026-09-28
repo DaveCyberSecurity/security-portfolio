@@ -322,7 +322,7 @@ Audit all application registrations and enterprise applications to identify:
 - Inactive owners
 - Service-principal ownership relationships
 
-> Application ownership should be reviewed with the same rigor and frequency as privileged directory role assignments.
+Application ownership should be reviewed with the same rigor and frequency as privileged directory role assignments.
 
 **Priority:** High  
 **Owner:** IAM / Governance Team
