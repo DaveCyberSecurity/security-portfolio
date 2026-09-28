@@ -77,7 +77,7 @@ The attacker can then use the new credential to obtain another OAuth token as th
 
 
 ##
-## Objective 4. PERSIST
+## Objective 4: PERSIST
 
 Looking at the Expose an API blade of the Legacy application a custom API scope has appeared.
 The attacker used Carl's access to create the scope on the legacy app.
@@ -102,7 +102,7 @@ The attacker's app is then pointed at that link.
 
 
 ##
-## Objective 5. LOOT
+## Objective 5: LOOT
 From the attacker's perspective, it gets even better. 
 
 On the Authentication blade of the attacker's new service principle, two new redirect URIs appeared.
