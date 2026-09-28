@@ -146,7 +146,7 @@ In a consent phishing attack, the attacker does not need the user's password, se
 
 ---
 
-## Findings and recommendations
+## Findings and recommendations:
 
 The following remediation actions are recommended based on evidence of OAuth consent phishing, application ownership abuse, persistence through application credentials, and malicious app-to-app trust relationships.
 
@@ -357,7 +357,7 @@ Alerts should be integrated into SOC monitoring workflows and investigated promp
 
 ---
 
-## What I learned
+## What I learned:
 
 
 
