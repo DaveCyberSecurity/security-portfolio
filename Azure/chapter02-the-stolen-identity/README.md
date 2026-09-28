@@ -3,7 +3,9 @@
 
 ---
 
-# Scenario
+
+## Scenario:
+
 Sometime in the last 24 hours, someone got access into the Mad Hat Labs tenant. Oh naurrrrr....They didn't kick down any doors using any zero-day exploits on anything. They walked right in through the identity plane, and man were they were quiet about it. No alarms were tripped. The Mad Hat Labs security team were NOT notified of any MALFEASANCE. The logs just show a series of perfectly normal sign-ins.
 
 In this exercise, I reconstructed a five-stage OAuth consent-phishing kill chain in a live Azure tenant through forensic analysis of two linked app registrations.
@@ -14,7 +16,7 @@ Once the attacker is in, they will seek to use the access they have gained to is
 
 ---
 
-# Environment
+## Environment:
 Platform: Live multi-user Azure training tenant
 
 Services and Tools: Azure Portal, Azure Resource manager
@@ -23,9 +25,9 @@ Access level: Reader access
 
 ---
 
-# Investigation
+## Investigation:
 
-## Objective 1: ENTRY
+### Objective 1: ENTRY
 The attacker gained entry by the method of OAuth consent-phishing detailed above. The user completed MFA, clicked Accept to the consent screen and their access token was captured.
 The attacker then began to look for resources to exploit and establish persistence. The attacker found what they were looking for in a Legacy Enterprise connection application which the user had ownership access to. The incident team responded and identified the phished user as Carl from accounting. Carl had been left as an owner of the Legacy application by mistake and had never been removed. 
 
@@ -36,7 +38,7 @@ First , we look at the Legacy app under App Registrations. In the Branding and P
 
 
 ## 
-## Objective 2: ESCALATE
+### Objective 2: ESCALATE
 
 Since Carl was the owner of the App, the attacker could use Carl's token permissions to make changes to the app to establish a backdoor.
 
@@ -47,7 +49,7 @@ To further enable persistent access, the expiry date of the Client Secret is set
 ![image alt](https://github.com/DaveCyberSecurity/security-portfolio/blob/main/Azure/chapter02-the-stolen-identity/images/2-Secrets-2.png)
 
 ##
-## Objective 3: PIVOT
+### Objective 3: PIVOT
 
 By using the new Client secret, the attacker can now perform API calls using the permissions of the application. 
 
@@ -79,7 +81,7 @@ The attacker can then use the new credential to obtain another OAuth token as th
 
 
 ##
-## Objective 4: PERSIST
+### Objective 4: PERSIST
 
 Looking at the Expose an API blade of the Legacy application a custom API scope has appeared.
 The attacker used Carl's access to create the scope on the legacy app.
@@ -104,7 +106,7 @@ The attacker's app is then pointed at that link.
 
 
 ##
-## Objective 5: LOOT
+### Objective 5: LOOT
 From the attacker's perspective, it gets even better. 
 
 On the Authentication blade of the attacker's new service principle, two new redirect URIs appeared.
@@ -128,7 +130,7 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 
 ---
 
-# What broke / what surprised me
+## What broke / what surprised me:
 At the outset of the investigation, I made the erroneous assumption that Phishing-Resistant MFA could have prevented the OAuth consent phishing scenario. 
 Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. 
 However, **it does not, by itself, prevent OAuth consent phishing**.
@@ -144,21 +146,21 @@ In a consent phishing attack, the attacker does not need the user's password, se
 
 ---
 
-# Findings and recommendations
+## Findings and recommendations
 
 The following remediation actions are recommended based on evidence of OAuth consent phishing, application ownership abuse, persistence through application credentials, and malicious app-to-app trust relationships.
 
 ---
 
-## 1. Revoke Unauthorized Application Credentials
+### 1. Revoke Unauthorized Application Credentials
 
-### Finding
+#### Finding
 The attacker established persistent access by creating a client secret on the compromised Legacy Application.
 
-### Risk
+#### Risk
 Application credentials allow direct authentication as the application and can remain valid even after user sessions are terminated or passwords are changed.
 
-### Recommendation
+#### Recommendation
 Immediately revoke and remove all unauthorized client secrets and certificates associated with the affected application. Following removal:
 
 - Rotate all remaining legitimate credentials.
@@ -170,12 +172,12 @@ Immediately revoke and remove all unauthorized client secrets and certificates a
 
 ---
 
-## 2. Remove Rogue Service Principals from Application Ownership
+### 2. Remove Rogue Service Principals from Application Ownership
 
-### Finding
+#### Finding
 A malicious service principal was added to the application's Owners list, providing a mechanism to re-establish credentials after remediation.
 
-### Risk
+#### Risk
 Application ownership grants administrative control over the application, including the ability to:
 
 - Create new secrets
@@ -183,7 +185,7 @@ Application ownership grants administrative control over the application, includ
 - Alter authentication settings
 - Add additional owners
 
-### Recommendation
+#### Recommendation
 Remove all unauthorized service principals and user accounts from the application's Owners list. Validate ownership assignments against approved application administrators and business owners.
 
 **Priority:** Critical  
@@ -191,12 +193,12 @@ Remove all unauthorized service principals and user accounts from the applicatio
 
 ---
 
-## 3. Remove Malicious Custom API Scopes
+### 3. Remove Malicious Custom API Scopes
 
-### Finding
+#### Finding
 A custom OAuth scope was published through the application's **Expose an API** configuration.
 
-### Risk
+#### Risk
 Unauthorized scopes may:
 
 - Provide alternative access paths
@@ -204,7 +206,7 @@ Unauthorized scopes may:
 - Facilitate future consent-phishing campaigns
 - Create undocumented trust relationships
 
-### Recommendation
+#### Recommendation
 Delete all unauthorized custom API scopes and review the application's API exposure settings to ensure they align with documented business requirements.
 
 **Priority:** High  
@@ -212,15 +214,15 @@ Delete all unauthorized custom API scopes and review the application's API expos
 
 ---
 
-## 4. Revoke Existing OAuth Consent Grants
+### 4. Revoke Existing OAuth Consent Grants
 
-### Finding
+#### Finding
 OAuth consent grants may remain active even after application credentials, owners, or scopes have been removed.
 
-### Risk
+#### Risk
 Valid consent grants can continue to provide access tokens to previously authorized applications.
 
-### Recommendation
+#### Recommendation
 Explicitly revoke all associated **OAuth2PermissionGrant** objects and verify that both user-level and tenant-wide consent grants have been removed.
 
 Validate that:
@@ -236,15 +238,15 @@ Validate that:
 
 ---
 
-## 5. Remove Unauthorized Redirect URIs
+### 5. Remove Unauthorized Redirect URIs
 
-### Finding
+#### Finding
 The attacker configured redirect URIs pointing to external infrastructure.
 
-### Risk
+#### Risk
 Malicious redirect URIs can be used to capture authorization codes and OAuth tokens during future authentication flows.
 
-### Recommendation
+#### Recommendation
 Remove all unauthorized redirect URIs and verify that all remaining endpoints are:
 
 - Approved
@@ -257,15 +259,15 @@ Remove all unauthorized redirect URIs and verify that all remaining endpoints ar
 
 ---
 
-## 6. Review and Reduce Microsoft Graph Permissions
+### 6. Review and Reduce Microsoft Graph Permissions
 
-### Finding
+#### Finding
 The compromised application possessed powerful Microsoft Graph permissions, including directory-wide read access.
 
-### Risk
+#### Risk
 Excessive application permissions increase the impact of application compromise and broaden attacker visibility throughout the tenant.
 
-### Recommendation
+#### Recommendation
 Perform a least-privilege review of all Microsoft Graph permissions assigned to the application.
 
 Actions should include:
@@ -280,15 +282,15 @@ Actions should include:
 
 ---
 
-## 7. Restrict User Application Registration
+### 7. Restrict User Application Registration
 
-### Finding
+#### Finding
 The attacker leveraged the ability of a standard user to register a new application and service principal.
 
-### Risk
+#### Risk
 Unrestricted application registration allows attackers to create persistence mechanisms and establish unauthorized trust relationships following account compromise.
 
-### Recommendation
+#### Recommendation
 Disable default user application registration where business requirements permit.
 
 Where application registration is required:
@@ -303,15 +305,15 @@ Where application registration is required:
 
 ---
 
-## 8. Conduct a Tenant-Wide Application Ownership Review
+### 8. Conduct a Tenant-Wide Application Ownership Review
 
-### Finding
+#### Finding
 Excessive or stale ownership assignments enabled the attacker's escalation path.
 
-### Risk
+#### Risk
 Application owners possess significant administrative authority that is frequently overlooked during identity governance reviews.
 
-### Recommendation
+#### Recommendation
 Audit all application registrations and enterprise applications to identify:
 
 - Inappropriate owners
@@ -327,15 +329,15 @@ Audit all application registrations and enterprise applications to identify:
 
 ---
 
-## 9. Implement Continuous Monitoring and Alerting
+### 9. Implement Continuous Monitoring and Alerting
 
-### Finding
+#### Finding
 The attacker established persistence through configuration changes that often generate little operational visibility.
 
-### Risk
+#### Risk
 Malicious application modifications may remain undiscovered without dedicated monitoring controls.
 
-### Recommendation
+#### Recommendation
 Implement security monitoring and alerting for the following events:
 
 - New client secret creation
