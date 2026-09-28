@@ -131,17 +131,16 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 ---
 
 ## What broke / what surprised me:
-At the outset of the investigation, I made the erroneous assumption that Phishing-Resistant MFA could have prevented the OAuth consent phishing scenario. 
-Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. 
-However, **it does not, by itself, prevent OAuth consent phishing**.
+I was genuinely surprised that Microsoft Entra ID allows all member users to register applications by default. This behavior dates back to Azure AD's original goal of enabling self-service development and SaaS integration without requiring administrators for every application registration.
 
-The reason is simple:
- 
-- **Phishing-resistant MFA (such as FIDO2 security keys, Windows Hello for Business, or passkeys) protects authentication.**
-- **OAuth consent phishing abuses authorization.**
+When a standard user registers an app, the user:
+- Becomes an owner of the application they create.
+- Can manage that application's configuration.
+- Cannot automatically grant admin-level permissions.
+- Still requires administrator approval for permissions that require admin consent.
 
-
-In a consent phishing attack, the attacker does not need the user's password, session cookie, or MFA code. Instead, they convince the user to authorize a malicious application that requests access to organizational resources.
+The good news:
+As mentioned in Objective 3, when a standard user is allowed to register new applications in Entra, the newly created app starts with no powerful Microsoft Graph permissions. Creating an app registration does not automatically grant access to tenant data. The Directory.Read.All or the User.Read.All permissions have to be explicitly requested and consented to administratively. This can be caught by monitoring and alerting when an Administrative consent event takes place.
 
 
 ---
@@ -358,6 +357,19 @@ Alerts should be integrated into SOC monitoring workflows and investigated promp
 ---
 
 ## What I learned:
+At the outset of the investigation, I made the erroneous assumption that Phishing-Resistant MFA could have prevented the OAuth consent phishing scenario. 
+Phishing-resistant MFA significantly reduces the risk of credential theft and adversary-in-the-middle (AiTM) phishing attacks. 
+However, **it does not, by itself, prevent OAuth consent phishing**.
+
+The reason is simple:
+ 
+- **Phishing-resistant MFA (such as FIDO2 security keys, Windows Hello for Business, or passkeys) protects authentication.**
+- **OAuth consent phishing abuses authorization.**
+
+
+In a consent phishing attack, the attacker does not need the user's password, session cookie, or MFA code. Instead, they convince the user to authorize a malicious application that requests access to organizational resources.
+
+
 
 
 
