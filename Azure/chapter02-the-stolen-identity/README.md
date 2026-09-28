@@ -124,16 +124,18 @@ This can be used to launch an entirely new OAuth consent phishing campaign again
 | 5 | Loot | Redirect URIs configured for future phishing |
 
 #
-What broke / what surprised me
+## What broke / what surprised me
 
 
 
+#
+## Findings and recommendations
 
-Findings and recommendations
+
 revoke the client secret · remove the rogue service principal from Owners · delete the custom exposed API scope · revoke the OAuth2PermissionGrant explicitly, because containment does not remove it · remove the attacker redirect URI · review and reduce the Graph application permissions · disable default user app registration · audit every app registration's Owners list the same way you audit directory role membership · alert on new client secrets and new redirect URIs
 
 #
-What I learned
+## What I learned
 
 Phishing-resistant MFA significantly reduces credential theft and adversary-in-the-middle phishing, but it does not by itself stop OAuth consent phishing.
 Phishing-resistant MFA (such as FIDO2 security keys, Windows Hello for Business, or passkeys) protects the authentication step. OAuth consent phishing abuses the authorization step. 
