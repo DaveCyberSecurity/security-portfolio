@@ -1,8 +1,11 @@
-<h1 align="center">The Privilege Audit</h1> 
+<h1 align="center">The Privilege Audit:</h1> 
 
 
-<h2 align="center">blahblah</h2>
+<h2 align="center">explanation yada yada</h2>
 
+---
+
+#
 
 
 
