@@ -7,7 +7,7 @@
 
 
 ## Scenario:
-
+Privilege analysis was conducted using five independent collection methods: Azure IAM review, Azure CLI enumeration, Azure Resource Graph KQL analysis, Privileged Identity Management exports, and manual validation. Combining these methods provided visibility into standing privileges, eligible privileges, orphaned assignments, service principal permissions, and privilege escalation opportunities that would not have been observable through any single Azure interface. This approach provides a high-confidence assessment of effective privileged access across the tenant.
 
 
 | Method               | Sees                                        | Misses                              |
